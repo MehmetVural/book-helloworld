@@ -12,9 +12,10 @@ jobs:
       uses: redhat-developer/openshift-actions@v1.1
       with:
         version: 'latest'
-        openshift_server_url: 'https://console-openshift-console.apps.us-west-1.starter.openshift-online.com/command-line-tools' #${{ secrets.OPENSHIFT_SERVER_URL }}
+        openshift_server_url: 'https://api.us-west-1.starter.openshift-online.com:6443' #${{ secrets.OPENSHIFT_SERVER_URL }}
+        parameters: '{"apitoken": "cy9soOrOPYUdvfPLsHQ4fRLUFFIteSIAndEKyOsIu9c", "acceptUntrustedCerts": "true"}'
         #parameters: '{"apitoken": "${{ secrets.API_TOKEN }}", "acceptUntrustedCerts": "true"}'
-        parameters: '{"username": "${{ secrets.USERNAME }}", "password": "${{ secrets.PASSWORD }}", "acceptUntrustedCerts": "true"}'
+        #parameters: '{"username": "${{ secrets.USERNAME }}", "password": "${{ secrets.PASSWORD }}", "acceptUntrustedCerts": "true"}'
         cmd: |
           'version'
           'start-build book-helloworld-my --follow'
