@@ -12,9 +12,8 @@ jobs:
       uses: redhat-developer/openshift-actions@v1.1
       with:
         version: 'latest'
-        openshift_server_url: 'https://api.us-west-1.starter.openshift-online.com:6443' #${{ secrets.OPENSHIFT_SERVER_URL }}
-        parameters: '{"apitoken": "cy9soOrOPYUdvfPLsHQ4fRLUFFIteSIAndEKyOsIu9c", "acceptUntrustedCerts": "true"}'
-        #parameters: '{"apitoken": "${{ secrets.API_TOKEN }}", "acceptUntrustedCerts": "true"}'
+        openshift_server_url: ${{ secrets.OPENSHIFT_SERVER_URL }}
+        parameters: '{"apitoken": "${{ secrets.API_TOKEN }}", "acceptUntrustedCerts": "true"}'
         #parameters: '{"username": "${{ secrets.USERNAME }}", "password": "${{ secrets.PASSWORD }}", "acceptUntrustedCerts": "true"}'
         cmd: |
           'version'
